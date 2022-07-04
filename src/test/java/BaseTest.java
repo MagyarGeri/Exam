@@ -24,7 +24,8 @@ public class BaseTest {
     String bio = "A vizsgaremek remek vizsga";
     String phoneNumber = "123456789";
 
-    ArrayList<String> expectedBlogTitleList = new ArrayList<String>(Arrays.asList("Markdown Formatting Demo", "Designer Conference at Florida 2020", "Benjamin Franklins thoughts about new designers", "Designers thoughts about mobile UI", "How to become acreative designer", "New designers limitations", "Things you must know as a designer", "World's Most Famous App Developers and Designers", "You must know this before becoming a designer"));
+    //ArrayList<String> expectedBlogTitleList = new ArrayList<String>(Arrays.asList("Markdown Formatting Demo", "Designer Conference at Florida 2020", "Benjamin Franklins thoughts about new designers", "Designers thoughts about mobile UI", "How to become acreative designer", "New designers limitations", "Things you must know as a designer", "World's Most Famous App Developers and Designers", "You must know this before becoming a designer"));
+    List<String> expectedBlogTitleList = Arrays.asList("Markdown Formatting Demo", "Designer Conference at Florida 2020", "Benjamin Franklins thoughts about new designers", "Designers thoughts about mobile UI", "How to become acreative designer", "New designers limitations", "Things you must know as a designer", "World's Most Famous App Developers and Designers", "You must know this before becoming a designer");
 
 
 
@@ -38,7 +39,7 @@ public class BaseTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-extensions");
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("start-maximized", "--incognito");
         driver = new ChromeDriver(options);
@@ -46,8 +47,8 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-    @AfterEach
+   /* @AfterEach
     public void Dispose(){
         driver.quit();
-    }
+    }*/
 }

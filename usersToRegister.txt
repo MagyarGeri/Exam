@@ -1,0 +1,12 @@
+Magyar Gergő;123456;geri.magyar93@gmail.com;teszt
+Gergő Magyar;654321;magyar.geri93@gmail.com;tzset
+Kis Pista;456789;kis.pista66@t360.hu;teszter
+Gipsz Jakab;987654;jakab.gipsz6@greenfox.hu;manuál
+Bélák Bélája;369852;bela.bella@feketefehér.hu;automata
+Orsós Viktória;741258;viki.orsos@progmasters.hu;vizsgázó
+Mézga Géza;197346;geza.mezga@codecool.hu;teszter
+Vlagyimir Vlagyimirovics;20220222;vlagyi.mirovics@russia.ru;támadó-kóbor
+
+
+
+
