@@ -39,7 +39,7 @@ public class BaseTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-extensions");
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("start-maximized", "--incognito");
         driver = new ChromeDriver(options);
@@ -47,8 +47,8 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-   /* @AfterEach
+    @AfterEach
     public void Dispose(){
         driver.quit();
-    }*/
+    }
 }
