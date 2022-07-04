@@ -1,20 +1,13 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 import java.io.*;
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class PortioTest extends BaseTest{
 
-
     @Test
     @Order(1)
+    @Severity(SeverityLevel.NORMAL)
     public void acceptTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -24,6 +17,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(2)
+    @Severity(SeverityLevel.NORMAL)
     public void xTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -33,6 +27,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(3)
+    @Severity(SeverityLevel.CRITICAL)
     public void regMeTest(){
 
         Page page = new Page(driver);
@@ -45,6 +40,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(4)
+    @Severity(SeverityLevel.CRITICAL)
     public void loginMeTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -57,6 +53,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(5)
+    @Severity(SeverityLevel.CRITICAL)
     public void logoutTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -71,6 +68,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(6)
+    @Severity(SeverityLevel.MINOR)
     public  void  profileNewDataTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -86,6 +84,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(7)
+    @Severity(SeverityLevel.NORMAL)
     public void deleteProfileTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -99,6 +98,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(8)
+    @Severity(SeverityLevel.MINOR)
     public void articlesListTest() throws InterruptedException {
         Page page = new Page(driver);
         page.navigate();
@@ -111,6 +111,7 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(9)
+    @Severity(SeverityLevel.MINOR)
     public void saveBlogTextTest() throws InterruptedException {
         Page page = new Page(driver);
         page.navigate();
@@ -127,64 +128,32 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Order(10)
+    @Severity(SeverityLevel.CRITICAL)
     public void repeatedUserRegTest() throws IOException {
         Page page = new Page(driver);
         page.navigate();
         page.clickOnAccept();
         page.regTabclicker();
 
-        try {
-            Scanner scanner = new Scanner(new File("usersToRegister.txt"));
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] arr = line.split(";");
-
-                page.repeatedUserReg(arr[0],arr[1],arr[2],arr[3]);
-                page.fieldClearer();
-
-                System.out.println(arr);
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-        /*BufferedReader reader;
+        BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader("usersToRegister.txt"));
 
             String line = reader.readLine();
-            String[] arr = line.split(";");
-
             while (line != null) {
+                String[] arr = line.split(";");
                 page.repeatedUserReg(arr[0],arr[1],arr[2],arr[3]);
-
-                System.out.println(arr.length);
-                Assertions.assertTrue(page.registrationCheck());
-
+                boolean result = page.registrationCheck();
+                Assertions.assertTrue(result);
                 line = reader.readLine();
-                page.fieldClearer();
-
-
-
-
-
+                page.navigate();
+                page.regTabclicker();
             }
-            page.navigate();
-            page.regTabclicker();
             reader.close();
-        }
+
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
-
-
-
-
+        }
     }
-
-    }
+}
 

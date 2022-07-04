@@ -21,13 +21,9 @@ public class Page{
     }
 
     private final By acceptButton = By.id("terms-and-conditions-button");
-
     private final By xButton = By.xpath("//*[@class=\"CloseIcon\"]");
-
     private final By popupWindow = By.xpath("//*[@class=\"popup\"]");
-
     private String url = "https://lennertamas.github.io/portio/";
-
 
 
     public void navigate(){
@@ -90,8 +86,6 @@ public class Page{
         driver.findElement(usernameField).sendKeys(name);
         driver.findElement(loginPasswordField).sendKeys(password);
         driver.findElement(loginButton).click();
-
-
     }
 
     public  boolean loginCheck(){
@@ -99,9 +93,7 @@ public class Page{
     }
 
 
-
     private final By logoutButton = By.id("logout-link");
-
 
     public void logout(){
 
@@ -181,7 +173,7 @@ public class Page{
 
     private final By articleTab = By.xpath("//a[@href=\"https://lennertamas.github.io/portio/blog/designer-conference-at-florida-2020/\"]");
     private final By blogContent = By.xpath("//*[@class=\"singleBlog__content\"]/blockquote");
-    private final By paragraphs = By.xpath("//*[@class=\"singleBlog__content\"]/ul/li");
+
 
 
     public String saveBlogText() {
@@ -215,6 +207,7 @@ public class Page{
         }
     }
 
+
     public String reader(String filename) {
         String res = "";
         try {
@@ -233,6 +226,7 @@ public class Page{
         return res;
     }
 
+
     public void regTabclicker(){
 
         driver.findElement(registerTab).click();
@@ -247,16 +241,5 @@ public class Page{
         driver.findElement(registerButton).click();
     }
 
-    public void fieldClearer(){
-        driver.findElement(userNameField).sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        driver.findElement(userNameField).sendKeys(Keys.chord(Keys.DELETE));
-        driver.findElement(passwordField).sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        driver.findElement(passwordField).sendKeys(Keys.chord(Keys.DELETE));
-        driver.findElement(emailField).sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        driver.findElement(emailField).sendKeys(Keys.chord(Keys.DELETE));
-        driver.findElement(descriptionField).sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        driver.findElement(descriptionField).sendKeys(Keys.chord(Keys.DELETE));
 
-
-    }
 }

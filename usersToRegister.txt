@@ -6,7 +6,3 @@ Bélák Bélája;369852;bela.bella@feketefehér.hu;automata
 Orsós Viktória;741258;viki.orsos@progmasters.hu;vizsgázó
 Mézga Géza;197346;geza.mezga@codecool.hu;teszter
 Vlagyimir Vlagyimirovics;20220222;vlagyi.mirovics@russia.ru;támadó-kóbor
-
-
-
-
