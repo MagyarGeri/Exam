@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.*;
@@ -8,6 +9,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(1)
     @Severity(SeverityLevel.NORMAL)
+    @Description("Terms and Condition accept")
     public void acceptTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -18,6 +20,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(2)
     @Severity(SeverityLevel.NORMAL)
+    @Description("Terms and Condition decline")
     public void xTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -28,6 +31,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(3)
     @Severity(SeverityLevel.CRITICAL)
+    @Description("User Registration")
     public void regMeTest(){
 
         Page page = new Page(driver);
@@ -41,6 +45,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(4)
     @Severity(SeverityLevel.CRITICAL)
+    @Description("Login")
     public void loginMeTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -54,6 +59,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(5)
     @Severity(SeverityLevel.CRITICAL)
+    @Description("Logout")
     public void logoutTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -69,6 +75,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(6)
     @Severity(SeverityLevel.MINOR)
+    @Description("Profile modification")
     public  void  profileNewDataTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -85,6 +92,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(7)
     @Severity(SeverityLevel.NORMAL)
+    @Description("Delete profile")
     public void deleteProfileTest(){
         Page page = new Page(driver);
         page.navigate();
@@ -99,6 +107,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(8)
     @Severity(SeverityLevel.MINOR)
+    @Description("List from articles title")
     public void articlesListTest() throws InterruptedException {
         Page page = new Page(driver);
         page.navigate();
@@ -112,6 +121,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(9)
     @Severity(SeverityLevel.MINOR)
+    @Description("Save data from Site")
     public void saveBlogTextTest() throws InterruptedException {
         Page page = new Page(driver);
         page.navigate();
@@ -129,6 +139,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Order(10)
     @Severity(SeverityLevel.CRITICAL)
+    @Description("Repeated user registration")
     public void repeatedUserRegTest() throws IOException {
         Page page = new Page(driver);
         page.navigate();
