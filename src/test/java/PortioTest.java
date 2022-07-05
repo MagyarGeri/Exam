@@ -39,8 +39,22 @@ public class PortioTest extends BaseTest{
         page.clickOnAccept();
         page.registerMe(name, password, email, description);
         Assertions.assertTrue(page.registrationCheck());
-
     }
+
+    @Test
+    @Order(11)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("User Registration")
+    public void regValidationTest(){
+
+        Page page = new Page(driver);
+        page.navigate();
+        page.clickOnAccept();
+        page.registerMe(name, password, emailwithoutAT, description);
+        Assertions.assertFalse(page.registrationCheck());
+    }
+
+
 
     @Test
     @Order(4)
@@ -101,7 +115,6 @@ public class PortioTest extends BaseTest{
         page.loginMe(name, password);
         page.deleteProfile();
         Assertions.assertTrue(page.deleteProfileChecker());
-
     }
 
     @Test
@@ -128,6 +141,8 @@ public class PortioTest extends BaseTest{
         page.clickOnAccept();
         page.registerMe(name, password, email, description);
         page.loginMe(name, password);
+
+
         page.articklesList();
         String res = page.saveBlogText();
         page.write(res, "saved.txt");
